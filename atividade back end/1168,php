@@ -1,0 +1,29 @@
+<?php
+// Função para calcular a quantidade de trigo
+function calcularTrigo($quadrados) {
+    // Inicializando a quantidade de trigo
+    $trigo = 1; // Começa com 1 grão na primeira casa
+
+    // Loop para dobrar a quantidade de grãos em cada quadrado
+    for ($i = 2; $i <= $quadrados; $i++) {
+        $trigo *= 2; // Dobra a quantidade de grãos
+    }
+
+    // Convertendo a quantidade de grãos para gramas
+    $gramas = $trigo / 12; // Cada 12 grãos correspondem a 1 grama
+
+    return $gramas; // Retorna a quantidade de trigo em gramas
+}
+
+// Lendo o número de casos de teste
+$n = intval(readline());
+
+// Processando cada caso de teste
+for ($i = 0; $i < $n; $i++) {
+    // Lendo o número de quadrados
+    $quadrados = intval(readline());
+
+    // Calculando e imprimindo a quantidade de trigo em gramas
+    echo calcularTrigo($quadrados) . PHP_EOL;
+}
+?>
